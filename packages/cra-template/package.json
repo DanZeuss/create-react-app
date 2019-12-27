@@ -13,6 +13,14 @@
     "url": "https://github.com/facebook/create-react-app.git",
     "directory": "packages/cra-template"
   },
+  "appPages": [
+    {
+        "name": "index",
+        "title": "index",
+        "appHtml": "public/index.html",
+        "appIndexJs": "src/index"
+    }
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=8"
