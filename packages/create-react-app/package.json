@@ -3,8 +3,16 @@
   "version": "3.3.0",
   "keywords": [
     "react"
-  ],
+  ],  
   "description": "Create React apps with no build configuration.",
+  "appPages": [
+    {
+        "name": "index",
+        "title": "index",
+        "appHtml": "public/index.html",
+        "appIndexJs": "src/index"
+    }
+  ],  
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-react-app.git",
