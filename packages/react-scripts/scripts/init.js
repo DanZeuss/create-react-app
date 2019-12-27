@@ -121,6 +121,16 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
+  // Define the boilerplate pages
+  appPackage.appPages = [
+    {
+      name: 'index',
+      title: 'index',
+      appHtml: 'public/index.html',
+      appIndexJs: 'src/index',
+    },
+  ];
+
   // Setup the script rules
   const templateScripts = templateJson.scripts || {};
   appPackage.scripts = Object.assign(
