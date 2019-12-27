@@ -71,22 +71,31 @@ fs.readdirSync(packagesDir).forEach(name => {
 Object.keys(packagePathsByName).forEach(name => {
   const packageJson = path.join(packagePathsByName[name], 'package.json');
   const json = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
-  Object.keys(packagePathsByName).forEach(otherName => {
-    if (json.dependencies && json.dependencies[otherName]) {
-      json.dependencies[otherName] = 'file:' + packagePathsByName[otherName];
-    }
-    if (json.devDependencies && json.devDependencies[otherName]) {
-      json.devDependencies[otherName] = 'file:' + packagePathsByName[otherName];
-    }
-    if (json.peerDependencies && json.peerDependencies[otherName]) {
-      json.peerDependencies[otherName] =
-        'file:' + packagePathsByName[otherName];
-    }
-    if (json.optionalDependencies && json.optionalDependencies[otherName]) {
-      json.optionalDependencies[otherName] =
-        'file:' + packagePathsByName[otherName];
-    }
-  });
+  (json.appPages = [
+    {
+      name: 'index',
+      title: 'index',
+      appHtml: 'public/index.html',
+      appIndexJs: 'src/index',
+    },
+  ]),
+    Object.keys(packagePathsByName).forEach(otherName => {
+      if (json.dependencies && json.dependencies[otherName]) {
+        json.dependencies[otherName] = 'file:' + packagePathsByName[otherName];
+      }
+      if (json.devDependencies && json.devDependencies[otherName]) {
+        json.devDependencies[otherName] =
+          'file:' + packagePathsByName[otherName];
+      }
+      if (json.peerDependencies && json.peerDependencies[otherName]) {
+        json.peerDependencies[otherName] =
+          'file:' + packagePathsByName[otherName];
+      }
+      if (json.optionalDependencies && json.optionalDependencies[otherName]) {
+        json.optionalDependencies[otherName] =
+          'file:' + packagePathsByName[otherName];
+      }
+    });
 
   fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), 'utf8');
   console.log(
