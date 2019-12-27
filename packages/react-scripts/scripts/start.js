@@ -52,7 +52,6 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-console.log('paths.appPages', paths.appPages);
 paths.appPages.forEach(appPage => {
   if (!checkRequiredFiles([appPage.appHtml, appPage.appIndexJs])) {
     process.exit(1);
