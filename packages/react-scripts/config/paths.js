@@ -91,7 +91,6 @@ if (appPages === undefined || appPages === null || appPages.length === 0) {
     };
   });
 
-console.log('my webpages:', appPages);
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
