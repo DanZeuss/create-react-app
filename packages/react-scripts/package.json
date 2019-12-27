@@ -14,6 +14,14 @@
   "bugs": {
     "url": "https://github.com/facebook/create-react-app/issues"
   },
+  "appPages": [
+    {
+        "name": "index",
+        "title": "index",
+        "appHtml": "public/index.html",
+        "appIndexJs": "src/index"
+    }
+  ],
   "files": [
     "bin",
     "config",
