@@ -84,7 +84,6 @@ if (appPages === undefined || appPages === null || appPages.length === 0) {
 } else
   appPages = appPages.map(ep => {
     // maps each element by resolving the right path
-    console.log(resolveModule(resolveApp, ep.appIndexJs));
     return {
       ...ep,
       appHtml: resolveApp(ep.appHtml),
