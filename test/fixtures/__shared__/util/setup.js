@@ -40,6 +40,17 @@ module.exports = class TestSetup {
         'react-scripts': 'latest',
       });
     }
+
+    // Define the boilerplate pages
+    packageJson.appPages = [
+      {
+        name: 'index',
+        title: 'index',
+        appHtml: 'public/index.html',
+        appIndexJs: 'src/index',
+      },
+    ];
+
     packageJson.scripts = Object.assign({}, packageJson.scripts, {
       start: 'react-scripts start',
       build: 'react-scripts build',

@@ -75,7 +75,6 @@ const resolveModule = (resolveFn, filePath) => {
 
 // Resolve appPages (aka entry points)
 var appPages = require(resolveApp('package.json')).appPages;
-console.log('myAppPages', resolveApp('package.json'));
 // checks if there is at least one entry point specified
 if (appPages === undefined || appPages === null || appPages.length === 0) {
   console.log(
