@@ -75,7 +75,6 @@ const resolveModule = (resolveFn, filePath) => {
 
 // Resolve appPages (aka entry points)
 var appPages = require(resolveApp('package.json')).appPages;
-console.log(appPages);
 // checks if there is at least one entry point specified
 if (appPages === undefined || appPages === null || appPages.length === 0) {
   console.log(
@@ -92,6 +91,7 @@ if (appPages === undefined || appPages === null || appPages.length === 0) {
     };
   });
 
+console.log('my webpages:', appPages);
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
