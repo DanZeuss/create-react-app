@@ -1,3 +1,22 @@
+# This is a version for `create-react-app` that allows multiple entry points without using the `ejecting`
+It's a fork of `create-react-app` with changes that allow the user add multiple entry points. 
+
+## To add multiple entry points, follow the steps:
+1. Clone this project and so, run `yarn create-react-app YOUR_APP_NAME`. It will create your React App using `create-react-app`;
+2. Go to `YOUR_APP_NAME` folder (or move it to anywhere you want);
+3. Add your new `.html` and `.js` file;
+4. Add the reference of your new `app` aka `page` in the `appPages` inside the `package.json` according the following structure:
+```
+    {
+      "name": "login",
+      "title": "login",
+      "appHtml": "public/login.html",
+      "appIndexJs": "src/login"
+    }
+```
+5. Run `yarn start` or `npm start` and access your new `app` by changing the URL according your `.html` file name. For example `http://localhost:3000/login.html`. 
+5. Slap the ⭐️ but right now, thanks.
+
 # Create React App [![Build Status](https://dev.azure.com/facebook/create-react-app/_apis/build/status/facebook.create-react-app?branchName=master)](https://dev.azure.com/facebook/create-react-app/_build/latest?definitionId=1&branchName=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md)
 
 Create React apps with no build configuration.
