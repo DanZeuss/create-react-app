@@ -1,5 +1,4 @@
-# This is a version for `create-react-app` that allows multiple entry points without using the `ejecting`
-It's a fork of `create-react-app` with changes that allow the user add multiple entry points. 
+# This is a forked version for `create-react-app` that allows multiple entry points without using the `ejecting`
 
 ## To add multiple entry points, follow the steps:
 1. Clone this project and so, run `yarn create-react-app YOUR_APP_NAME`. It will create your React App using `create-react-app`;
